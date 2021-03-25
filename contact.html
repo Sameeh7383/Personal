@@ -83,7 +83,7 @@ Author URL: http://w3layouts.com
                         <span class='error-message' id='name-error'></span>
                        
                     </div>
-                    <input type="email"class="form-control mb-4" name="email"  id="w3lSender" placeholder="Enter Your Email" required onkeyup='validateEmail()'>
+                    <input type="email"class="form-control mb-4" name="email"  id="w3lSender" placeholder="Enter Your Email" required onkeyup='validateEmail()' >
                     <span class='error-message' id='email-error'></span>
                     <input type="text" class="form-control " id="contact-phone" name="phone" placeholder="Enter Your Phone Number" pattern="[0-9]+" minlength="10"  required onkeyup='validatePhone()'>
                     <span class='error-message' id='phone-error'></span>
@@ -309,7 +309,7 @@ return true;
 
 
 function validateForm() {
-if (!validateName() || !validatePhone() || !validateEmail()) {
+if (!validateName() && !validatePhone() && !validateEmail()) {
 jsShow('submit-error');
 producePrompt('PLEASE ENTER THE FORM PROPERLY', 'submit-error', 'red');
 setTimeout(function(){jsHide('submit-error');}, 2000);
